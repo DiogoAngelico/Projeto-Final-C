@@ -134,7 +134,7 @@ Uma tentativa não é obrigada a ter o mesmos 4 valores nas mesmas posições, c
 
 ### Além dos valores introduzidos, faz sentido guardar o resultado dessa tentativa?
 
-awd
+Não faria sentido guardar os valores introduzidos, pois o nosso codigo so precisa de ver se o numero secreto está errado ou não, e contabilizar a quantidade de tentativas que sobram para o mesmo, assim sem precisar desse passo amais de guardar os resultados das tentativas. 
 
 ### Que campos poderiam existir numa struct que representa uma tentativa?
 
