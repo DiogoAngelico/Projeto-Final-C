@@ -112,35 +112,35 @@ jogador
 
 ## 5.1: Entradas
 
-1 – O jogador não precisara introduzir o nome, será sempre chamado de
+1. O jogador não precisara introduzir o nome, será sempre chamado de
 jogador
-2 – O jogador poderá escolher duas opções do menu, a opção de jogar e a de
+2. O jogador poderá escolher duas opções do menu, a opção de jogar e a de
 ver as regras, sendo selecionada entre opção 1 jogar, 2 regras
-3 – Será mostrado um campo onde dirá para ele introduzir o valor que desejar
+3. Será mostrado um campo onde dirá para ele introduzir o valor que desejar
 dentro das regras postas no jogo
-4 – Valores dentro de 1 a 6, não podendo repetir os números, nem colocar mais
+4. Valores dentro de 1 a 6, não podendo repetir os números, nem colocar mais
 do que 4 números.
-5- Os valores que devem ser recusados são, números maiores que 6 e
+5. Os valores que devem ser recusados são, números maiores que 6 e
 menores que 1, números repetidos, letras, repetir a mesma ordem.
 
 ## 5.2: Saida
-1 – No início do jogo será dado as boas-vindas e apresentaremos o menu do
+1. No início do jogo será dado as boas-vindas e apresentaremos o menu do
 jogo
-2 – Será comparado o valor com o número secreto e será mostrado o valor real
+2. Será comparado o valor com o número secreto e será mostrado o valor real
 caso esteja correto a tentativa do utilizador, caso não esteja correto ele dirá
 quais números estão presente na ordem secreta e quais não estão
-3 – Usando array diremos por posições qual é a posição certa e qual valor está
+3. Usando array diremos por posições qual é a posição certa e qual valor está
 atribuído a aquela posição dentro da array
-4 –Iremos percorrer o valor por toda a array para ver se o valor está presente e
+4. Iremos percorrer o valor por toda a array para ver se o valor está presente e
 comparamos o valor da posição com a qual está no array
-5 – A parabenização do jogador por acerta os números presentes no jogo, e
+5. A parabenização do jogador por acerta os números presentes no jogo, e
 agradeceremos pela participação, Ex: Parabéns, você descobriu os números
 secretos, agradecemos a sua participação.
-6 – Informaremos que a quantidade de tentativas foram todas gastas e o
+6. Informaremos que a quantidade de tentativas foram todas gastas e o
 jogador não conseguiu adivinhar o número agradecendo da mesma forma. Ex:
 Infelizmente você não conseguiu acertar a ordem secreta, mas ainda
 agradecemos muito pela sua participação.
-7 - Em caso de desistência avisaremos a ele que o jogo será finalizado, e
+7. Em caso de desistência avisaremos a ele que o jogo será finalizado, e
 daremos break no jogo, Ex: Como estás querendo desistir do jogo, estamos a
 informa que o jogo irá ser fechado, até a próxima e espero que tenha
 aproveitado o jogo.
