@@ -1,1 +1,167 @@
+#include <stdio.h>
+#include <stdlib.h> // rand(), srand()
+#include <time.h>   // time()
 
+#define VALOR 4
+
+int Codigo_Secreto(int codigo_secreto[]) {
+    srand((unsigned) time(NULL));
+        
+    int i;
+    int dado;
+    
+    for (int i = 0; i < VALOR; i++ ){
+        dado = (rand() % 6) + 1;
+        codigo_secreto[i] = dado;
+    }
+}
+
+void tentativas(){
+    
+    for (int i = 0; i < 10; i++){
+        printf("----------CODE BREAKER----------");
+        printf("---TENTE ADIVINHAR O CÓDIGO!----");
+        printf("Suas tentativas estão em %d", i);    
+        printf("aa");
+    }
+}
+
+void Menu_Inicio() {
+    printf("Olá jogador! Seja bem vindo ao Code Breaker!\nneste jogo precisas adivinhar um codigo secreto!\n");~
+    printf("Escreva 1 para jogar ou 2 para ver as regras!!\n");
+    printf("1 -> Jogar\n");
+    printf("2 -> Regras\n");
+}
+
+void menu_Regras (){
+    printf("Olá jogador, aqui estão presente as regras do nosso jogo\n");
+    printf("--------------------------------------------------------\n");
+    printf("Primeira regra: Não se pode colocar letras ou caracteres diferentes de números! \n");
+    printf("Segunda regra: Não pode colocar números com casas decimais ou com valor negativo! \n");
+    printf("Terceira regra: Não pode inserir mais do que 4 números! \n ");
+    printf("Quarta regra: Você tem 10 tentativas para acertar os números do código secreto.\n");
+    printf("--------------------------------------------------------\n");
+    printf("Caso queira voltar ao menu para poder começar o jogo digite 1!");
+}
+
+
+#define VALOR_TOTAL 4 
+
+int escolha_user(int escolha[]){
+
+    for (int i = 0; i < VALOR_TOTAL; i++){
+        printf("Introduza o numero %d do seu código: ", i);
+        scanf("%d", &escolha[i]);
+    }
+        
+}
+
+void Menu_Vitoria(){
+    printf("---------------------------------------------------\n");
+    printf("Parabéns!, Conseguiste encontrar o numero!\n");
+    printf("Demoraste x tentativas\n");
+    printf("Mas pelo menos acertaste o numero! yipeeee\n");
+    printf("Muito obrigado por jogares o nosso jogo jogador!\n");
+    printf("---------------------------------------------------");
+}
+
+int desistir(){
+        printf("A sair");    
+}
+
+void Menu_Derrota(){
+    printf("---------------------------------------------------\n");
+    printf("Acabaram as tuas vidas! nao acertaste o numero\n");
+    printf("O numero era xxxx! na proxima acertas.\n");
+    printf("Muito obrigado por jogates o nosso jogo jogador!\n");
+    printf("---------------------------------------------------\n");
+}
+
+int main (){
+    int opcao_1;
+    int opcao_2;
+    int x = 1;
+    int escolha1;
+    int Escolha[VALOR_TOTAL];
+    int codigo[VALOR_TOTAL];
+    Codigo_Secreto(codigo);
+    char confirma;
+
+    while (x == 1){
+        Menu_Inicio();
+        printf("Qual opção escolhes???:");
+        scanf("%d", &opcao_1);
+        if (opcao_1 == 1){
+            for (int vidas = 1; vidas <= 20; vidas++){
+                int AcerErro = 0;
+                printf("==========      CODE BREAKER      ==========\n");
+                printf("Suas tentativas estão em %d/10\n", vidas);  
+                printf("\nDigite o numero 1 para dizer sua tentativa!\n");  
+                printf("\nSe quiseres desistir digite o numero 0!\n");
+                printf("============================================\n");
+                printf("opção:");
+                scanf("%d", &escolha1);
+                if (escolha != 1 )
+                if (escolha1 == 1){
+                    escolha_user(Escolha);
+                    for (int i = 0; i < 4; i++){
+                        if (Escolha[i] == codigo[i]){
+                            AcerErro += 1;
+                        }
+                        printf("Codigo:%d\n", codigo[i]);
+                    }
+                    switch (AcerErro){
+                        case 0: printf("Nenhum numero correto.\n"); break;
+                        case 1: printf("Um numero correto!\n"); break;
+                        case 2: printf("Dois numeros Corretos!!\n"); break;
+                        case 3: printf("Três numeros Corretos!!!\n"); break;
+                    }
+                    if (AcerErro == 4){
+                        Menu_Vitoria();
+                        x = 0;
+                        break;
+                    } 
+                    if (vidas == 10){
+                        Menu_Derrota();
+                        x = 0;
+                        break;
+                    }
+                    
+                } 
+                if  (escolha1 == 0){
+                    printf("tem certeza que quer desistir do jogo? Se sim digite S : ");
+                    scanf("%s",&confirma);
+                    if(confirma == 'S' || confirma == 's'){
+                        desistir();
+                        x = 0;
+                        break;
+                    }
+                    else{
+                        vidas -=1;
+                        continue;
+                    }
+                }
+            }   
+        }
+
+        if (opcao_1 == 2) {
+            menu_Regras();
+            scanf("%d", &opcao_2);
+            if (opcao_2 == 1){
+                continue;
+            }
+            if (opcao_2 != 1){
+                continue;
+            }
+        }
+        if (opcao_1 != 1 && opcao_1 != 2 ){
+            printf("\nOpção invalida!!\n");
+            printf("---------------------\n");
+            continue;
+        }
+        break;
+
+    }
+
+    return 0;
+}
