@@ -108,7 +108,6 @@ int main (){
                         if (Escolha[i] == codigo[i]){
                             AcerErro += 1;
                         }
-                        printf("Codigo:%d\n", codigo[i]);
                     }
                     switch (AcerErro){
                         case 0: printf("Nenhum numero correto.\n"); break;
